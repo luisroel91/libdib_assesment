@@ -19,11 +19,11 @@ services:
     ports:
       - "8000:8000"
 
-  #pgadmin:
-  #  image: dpage/pgadmin4
-  #  depends_on:
-  #    - database
-  #  env_file:
-  #    - .env
-  #  ports:
-  #    - "8050:80"
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - database
+    env_file:
+      - .env
+    ports:
+      - "8050:80"
