@@ -68,7 +68,6 @@ async def create_record(new_record: RecordIn, session: AsyncSession = Depends(ge
     # Make sure requester has valid JWT token
     auth.jwt_required()
     # Take data that was POSTd and instantiate new record
-    print(new_record.dict())
     new_instance = CensusRecord(**new_record.dict())
     # Add new instance to DB session
     session.add(new_instance)
@@ -76,7 +75,7 @@ async def create_record(new_record: RecordIn, session: AsyncSession = Depends(ge
     try:
         await session.commit()
         return new_instance
-        # If we have an integrity error, rollback our transaction
+    # If we have an integrity error, rollback our transaction
     except IntegrityError:
         await session.rollback()
         return {"error": "DB integrity error saving object"}

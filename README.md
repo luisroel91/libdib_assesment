@@ -27,7 +27,8 @@ docker-compose will then get the container image files (if you haven't built the
 
 In project root dir:
 
-* docker-compose up
+* docker-compose up (with streaming logs)
+* docker-compose up -d (with no logs)
 
 This will automatically start the DB first, and make the other container wait until its available.
 
@@ -111,7 +112,7 @@ I'm sorry this took so long...I (somewhat foolishly) decided that I wanted to re
 
 The only tools I knew involved in this project were postgres/docker/pandas 
 
-Everything else in the stack, I learned over the course three days while my mom was in town from FL... 
+Everything else in the stack, I learned over the course three days while my mom was in town from Florida and mostly implemented today after work... 
 
 I hope you like it!
 
