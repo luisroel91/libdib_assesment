@@ -22,7 +22,7 @@ async def get_age_range_from_req(age: int) -> str:
     return "age_error"
 
 
-async def make_comparison(session: AsyncSession, request: Request):
+async def make_comparison(request: Request, session: AsyncSession):
     age_range = await get_age_range_from_req(request.age)
     # To make the comparison, we need to grab pertinent data for both races
     try:

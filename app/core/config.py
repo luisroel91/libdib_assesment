@@ -27,8 +27,6 @@ class Settings(BaseSettings):
 
     # JWT Secret Key
     authjwt_secret_key: str
-    # Store/get tokens from cookies
-    authjwt_token_location: set = {"cookies"}
     # Enable token revoke list
     authjwt_denylist_enabled: bool = True
     # Decide what kinds of tokens to check for in denylist

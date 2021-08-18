@@ -98,5 +98,18 @@ df = pd.concat([
     dfw
 ], axis=0)
 
+# Convert the DF col types to conform to our CensusRecord model
+df = df.astype({
+    "race": str,
+    "age_range": str,
+    "year": int,
+    "num_males_with_income": int,
+    "male_median_income_curr_dollars": float,
+    "male_median_income_2019_dollars": float,
+    "num_females_with_income": int,
+    "female_median_income_curr_dollars": float,
+    "female_median_income_2019_dollars": float,
+})
+
 # Pickle the DF
 df.to_pickle("./res.pkl")
