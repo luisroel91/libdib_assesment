@@ -26,7 +26,7 @@ router = APIRouter(
 # Take a username + password, hash PW, verify and return token
 @router.post("/login")
 async def login(req: UserIn, session: AsyncSession = Depends(get_session), auth: AuthJWT = Depends()):
-    """Takes in a UserIn schema, generates a JWT token (as httponly cookie) and returns User
+    """Takes in a UserIn schema, generates a JWT token and returns User
 
     Returns:
         id: int
